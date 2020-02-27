@@ -1,0 +1,20 @@
+name: Broadcast message
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0/15 * * * *"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run sender
+      run: /bin/sh sender.sh
+      env:
+        API_TOKEN: ${{ secrets.API_TOKEN }}
