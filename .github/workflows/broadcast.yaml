@@ -1,11 +1,11 @@
 name: Broadcast message
 
 on:
-  push:
-    branches:
-      - master
-  schedule:
-    - cron: "0/5 * * * *"
+  # push:
+  #  branches:
+  #    - master
+  # schedule:
+  #  - cron: "0/5 * * * *"
 
 jobs:
   build:
